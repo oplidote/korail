@@ -1443,10 +1443,9 @@ body {
 }
 
 .sw-business-slide {
-    position: relative;
-    left: -65%;
-    width: 165vw;
+    left: -30%;
     height: 645px;
+    overflow: visible;
 }
 
 

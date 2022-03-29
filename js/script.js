@@ -217,13 +217,11 @@ $(document).ready(function () {
         slidesPerView: 'auto',
         centeredSlides: true,
         loop: true,
+        loopAdditionalSlides:10,
         navigation: {
             nextEl: ".business-slide-next",
             prevEl: ".business-slide-prev",
         },
-        on: {
-            slideChange: function () {}
-        }
     });
 
     // 커리어 팝업 슬라이드

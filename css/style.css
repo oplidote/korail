@@ -43,7 +43,8 @@ body {
     font-weight: 400;
     font-family: Noto sans KR, "Malgun Gothic", "맑은 고딕", Dotum, "돋움", Gulim, "굴림", sans-serif;
     word-wrap: break-word;
-}/* 모달창 */
+}
+/* 모달창 */
 .modal {
     position: fixed;
     left: 0;
@@ -61,7 +62,8 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     display: block;
-    width: 500px;
+    max-width: 500px;
+    width: 100%;
     height: 350px;
     z-index: 999;
     background-color: #fff;
@@ -70,10 +72,12 @@ body {
     font-size: 15px;
     overflow: hidden;
 }
+
 .caution {
     margin-top: 20px;
     width: 80px;
 }
+
 .modal-wrap b {
     position: relative;
     display: block;
@@ -82,10 +86,17 @@ body {
     margin-top: 30px;
     margin-bottom: 40px;
 }
-.modal-wrap strong {
-    color: #003569;
-}
 
+.modal-wrap>strong {
+    color: #003569;
+    font-weight: bold;
+}
+.modal-date {
+    position: relative;
+    display: block;
+    margin-top: 5%;
+    font-size: 12px;
+}
 .modal-close {
     position: absolute;
     display: block;
@@ -103,11 +114,13 @@ body {
     opacity: 1;
     transition: opacity .3s .5s;
 }
+
 .comment-on .modal-close {
     transition: opacity .3s;
     opacity: 0;
     visibility: hidden;
 }
+
 .modal-close:hover {
     transform: rotate(225deg);
 }
@@ -145,10 +158,12 @@ body {
     background-color: #003569;
     transition: .5s .3s;
 }
+
 .comment-on .modal-comment {
     height: 100%;
     transition: .5s;
 }
+
 .comment-bt {
     position: relative;
     display: inline-block;
@@ -159,27 +174,76 @@ body {
     width: 100%;
     color: #fff;
     font-size: 17px;
+    z-index: 1;
 }
+
 .comment-box {
-    position: relative;
-    display: block;
-    
-    padding-top: 10px;
-}
-.comment-box p{
-    position: relative;
-    display: block;
-    font-size: 15px;
-    line-height: 17px;
-    margin-top: 40px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: left;
     opacity: 0;
-    color:#fff;
     transition: opacity .3s;
+    color: #fff;
 }
-.comment-on .comment-box p{
-    margin-top: 0;
+.comment-box span{
+    position: relative;
+    display: block;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 5px;
+    padding-left: 10%;
+}
+.comment-box span::before{
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: calc(10% - 10px);
+    width: 4px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #fff;
+    display: block;
+}
+.comment-box strong {
+    position: relative;
+    display: block;
+    padding-left: 7%;
+    font-size: 17px;
+    margin-bottom: 2%;
+    font-weight: bold;
+
+}
+
+.comment-on .comment-box{
     opacity: 1;
     transition: opacity .3s .5s;
+}
+.modal-date {
+    font-size: 12px;
+    color: #999;
+    text-align: center;
+}
+@media screen and (max-width: 420px) {
+    .caution {
+        width: 60px;
+    }
+
+    .modal-wrap {
+        height: 300px;
+        font-size: 13px;
+    }
+    .comment-box span {
+        font-size: 13px;
+    }
+
+    .modal-wrap b {
+        font-size: 15px;
+    }
 }
 /* 공통 요소 */
 .container {
@@ -2486,5 +2550,4 @@ body {
     width: 58px;
     height: 58px;
 }
-
 /* // 하단 */
